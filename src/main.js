@@ -2,7 +2,7 @@
 import Vue from 'vue'
 // import './lib/mui/js/mui.js'
 
-//按需导入 mint-ui 组件
+//按需导入 mint-ui组件
 import {Header, Tabbar, TabItem } from 'mint-ui'
 
 
