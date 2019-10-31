@@ -3,7 +3,7 @@
     <!-- 轮播图区域 -->
     <mt-swipe :auto="4000">
       <!-- v-for循环渲染data数组中的数据 -->
-      <mt-swipe-item v-for="item in lunbotuList" :key="item.url">
+      <mt-swipe-item v-for="item in lunbotuList" :key="item.img">
         <img :src="item.img" alt />
       </mt-swipe-item>
     </mt-swipe>
@@ -56,45 +56,27 @@ import { Toast } from "mint-ui";
 export default {
   data: function() {
     return {
-      lunbotuList: [
-        {
-          img:
-            "http://www.itcast.cn/images/newslide/homepageandphone/20191417101436641.jpg",
-          url:
-            "http://www.itcast.cn/images/newslide/homepageandphone/20191417101436641.jpg"
-        },
-        {
-          img:
-            "http://www.itcast.cn/images/newslide/homepageandphone/20195625095605745.jpg",
-          url:
-            "http://www.itcast.cn/images/newslide/homepageandphone/20195625095605745.jpg"
-        },
-        {
-          img:
-            "http://www.itcast.cn/images/newslide/homepageandphone/2019512509512943.jpg",
-          url:
-            "http://www.itcast.cn/images/newslide/homepageandphone/2019512509512943.jpg"
-        }
-      ]
-    };
+      lunbotuList: []
+    }
   },
   created() {
-    // this.getLunbo();
+    this.getLunbo();
   },
   methods: {
     //获取轮播图数据
-    /*     getLunbo () {
-      this.$http.get('api/getnewslist').then(result => {
-        console.log(result)
+    getLunbo() {
+      this.$http.get("api/getlunbo").then(result => {
+        console.log(result);
         if (result.body.status === 0) {
-        // 成功  -> 拿到数据将数据存到data身上 
-          this.lunbotuList = result.body.message
+          // 成功  -> 拿到数据将数据存到data身上
+          this.lunbotuList = result.body.message;
+          // console.log(result.body)
         } else {
           //失败
-          Toast('获取轮播图数据失败')
+          Toast("获取轮播图数据失败")
         }
-      })
-    } */
+      });
+    }
   }
 };
 </script>

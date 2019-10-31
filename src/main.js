@@ -34,15 +34,15 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 //全局配置, 在main.js中定义 必须在vue-resource 安装后面定义
-Vue.http.options.root = 'http://vue.studyit.io'
+Vue.http.options.root = 'http://www.liulongbin.top:3005'
 
-//格式化时间插件
-// import moment from 'moment' 
+// 格式化时间插件
+import moment from 'moment' 
 
-// //全局过滤器格式化时间
-// Vue.filter('dataFormat', function (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
-//   moment(dataStr).format(pattern)
-// })
+//全局过滤器格式化时间
+Vue.filter('dataFormat', function (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
+  moment(dataStr).format(pattern)
+})
 
 
 

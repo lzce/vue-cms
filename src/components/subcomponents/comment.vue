@@ -27,41 +27,16 @@ export default {
   data() {
     return {
       pageindex: 1,
-      comments: [ //渲染数据
-        {
-          id:1,
-          user_name: "匿名用户",
-          add_time: "2019-10-31",
-          content: "人生得意须尽，莫使金樽空对月。天生我材必有用，千金散尽还复来。one"
-        },
-        {
-          id:2,
-          user_name: "匿名用户",
-          add_time: "2019-10-31",
-          content: "人生得意须尽，莫使金樽空对月。天生我材必有用，千金散尽还复来。 two"
-        },
-        {
-          id:3,
-          user_name: "匿名用户",
-          add_time: "2019-10-31",
-          content: "人生得意须尽，莫使金樽空对月。天生我材必有用，千金散尽还复来。three"
-        },
-        {
-          id: 4,
-          user_name: "匿名用户",
-          add_time: "2019-10-31",
-          content: "人生得意须尽，莫使金樽空对月。天生我材必有用，千金散尽还复来。four"
-        }
-      ]
-    };
+      comments: []
+    }
   },
   created() {
-    // this.getComment()
+    this.getComment()
   },
   methods: {
     getComment () {
-      this.$http.get('api/getcomments'+ this.newsid+ '?pageindex=' + this.pageindex).then(res => {
-        if (res.body.status ===0) {
+      this.$http.get('api/getcomments/'+ this.newsid+ '?pageindex=' + this.pageindex).then(res => {
+        if (res.body.status === 0) {
            this.comments =  this.comments.concat(res.body.message)
         }else {
           Toast('获取评论失败')
@@ -73,8 +48,8 @@ export default {
       this.getComment() 
     }
   },
-     
-};
+  props: ['newsid']    
+}
 </script>
 
 <style lang="scss">
