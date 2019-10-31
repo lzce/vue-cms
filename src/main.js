@@ -7,7 +7,7 @@ import app from './App.vue'
 
 //按需导入 mint-ui组件
 import {Header, Tabbar, TabItem, Swipe, SwipeItem, Button} from 'mint-ui'
-//手动安装组件
+//手动安装组件 
 Vue.component(Header.name, Header) 
 Vue.component(Tabbar.name, Tabbar)
 Vue.component(TabItem.name, TabItem)
@@ -39,7 +39,7 @@ Vue.http.options.root = 'http://www.liulongbin.top:3005'
 // 格式化时间插件
 import moment from 'moment' 
 
-//全局过滤器格式化时间
+//全局过滤器格式化时间 --------------------> 有bug
 Vue.filter('dataFormat', function (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
   moment(dataStr).format(pattern)
 })
