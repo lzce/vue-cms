@@ -601,6 +601,13 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/helper-regex" "^7.0.0"
 
+"@babel/plugin-transform-strict-mode@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npm.taobao.org/@babel/plugin-transform-strict-mode/download/@babel/plugin-transform-strict-mode-7.2.0.tgz#1aff4b99ce987b47152566a987e9469e47b96626"
+  integrity sha1-Gv9Lmc6Ye0cVJWaph+lGnke5ZiY=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-template-literals@^7.4.4":
   version "7.4.4"
   resolved "https://registry.npm.taobao.org/@babel/plugin-transform-template-literals/download/@babel/plugin-transform-template-literals-7.4.4.tgz#9d28fea7bbce637fb7612a0750989d8321d4bcb0"
@@ -1190,6 +1197,11 @@ babel-plugin-dynamic-import-node@^2.3.0:
   integrity sha1-8A9Qe9qjw+P/bn5emNkKesq5b38=
   dependencies:
     object.assign "^4.1.0"
+
+babel-plugin-transform-remove-strict-mode@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npm.taobao.org/babel-plugin-transform-remove-strict-mode/download/babel-plugin-transform-remove-strict-mode-0.0.2.tgz#913685aab95439f3a0ed88e588fbd5e997890579"
+  integrity sha1-kTaFqrlUOfOg7YjliPvV6ZeJBXk=
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -4749,6 +4761,11 @@ performance-now@^2.1.0:
   resolved "https://registry.npm.taobao.org/performance-now/download/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
+photoswipe@^4.1.2:
+  version "4.1.3"
+  resolved "https://registry.npm.taobao.org/photoswipe/download/photoswipe-4.1.3.tgz#59f49494eeb9ddab5888d03392926a19bc197550"
+  integrity sha1-WfSUlO653atYiNAzkpJqGbwZdVA=
+
 picomatch@^2.0.4:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/picomatch/download/picomatch-2.1.0.tgz#0fd042f568d08b1ad9ff2d3ec0f0bfb3cb80e177"
@@ -6344,6 +6361,13 @@ vue-loader@^15.7.1:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-preview@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.npm.taobao.org/vue-preview/download/vue-preview-1.1.3.tgz#600ba0b94abfe969c7a10b2876aff7f3fbea6cfd"
+  integrity sha1-YAuguUq/6WnHoQsodq/38/vqbP0=
+  dependencies:
+    photoswipe "^4.1.2"
+
 vue-resource@^1.5.1:
   version "1.5.1"
   resolved "https://registry.npm.taobao.org/vue-resource/download/vue-resource-1.5.1.tgz#0f3d685e3254d21800bebd966edcf56c34b3b6e4"
@@ -6426,7 +6450,7 @@ webpack-dev-middleware@^3.7.2:
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
-webpack-dev-server@^3.8.2:
+webpack-dev-server@^3.9.0:
   version "3.9.0"
   resolved "https://registry.npm.taobao.org/webpack-dev-server/download/webpack-dev-server-3.9.0.tgz?cache=0&sync_timestamp=1571763403599&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack-dev-server%2Fdownload%2Fwebpack-dev-server-3.9.0.tgz#27c3b5d0f6b6677c4304465ac817623c8b27b89c"
   integrity sha1-J8O10Pa2Z3xDBEZayBdiPIsnuJw=

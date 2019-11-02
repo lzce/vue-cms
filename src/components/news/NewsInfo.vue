@@ -13,7 +13,7 @@
     <div class="content" v-html="newsInfo.content"></div>
 
     <!-- 评论区 -->
-    <comment-box :newsid="this.id"></comment-box>
+    <comment-box :id="this.id"></comment-box>
   </div>
 </template>
 
