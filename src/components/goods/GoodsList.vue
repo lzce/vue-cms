@@ -2,7 +2,22 @@
   <div class="goodslist-container">
     <!-- 这是图片列表部分 -->
     <div class="goods-list">
-      <div class="goods-item" v-for="item in goodsList" :key="item.id">
+      <!-- <router-link class="goods-item" v-for="item in goodsList" :key="item.id" :to="'/home/goodsinfo/'+ item.id" tag="div">
+        <img :src="item.img_url" alt="">
+        <div class="info">
+          <h3 class="title">{{ item.title }}</h3>
+          <div class="price">
+            <span class="new">¥{{ item.sell_price }}</span>
+            <span class="old">¥{{ item.market_price }}</span>
+          </div>
+          <div class="hot">
+            <span>热卖中</span>
+            <span>剩余{{ item.stock_quantity }}件</span>
+          </div>
+        </div>
+      </router-link> -->
+
+        <div class="goods-item" v-for="item in goodsList" :key="item.id" @click="goGoodsinfo(item.id)">
         <img :src="item.img_url" alt="">
         <div class="info">
           <h3 class="title">{{ item.title }}</h3>
@@ -45,9 +60,14 @@ export default {
         }
       })
     },
+    //获取更多的点击事件
     getmore(){
       this.pageIndex++
       this.getGoodsList()
+    },
+    //编程式导航
+    goGoodsinfo(id) {
+      this.$router.push('/home/goodsinfo/'+ id)
     }
   }
 }
@@ -93,11 +113,13 @@ export default {
           .old {
             text-decoration: line-through;
             margin-left: 5px;
+            color: #333;
           }
         }
         .hot {
           display: flex;
           justify-content: space-between;
+          color: #333;
         }
       }
     }
