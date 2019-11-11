@@ -110,6 +110,19 @@ export default {
     //点击就如购物车, 显示隐藏小球
     addShopCar(){
       this.flagball = !this.flagball
+
+      //在点击购物车的时候, 拼接一个商品信息为一个对象
+      //{ id: this.id, count: ,  price: , selected: true}
+      const obj = {
+        id: this.id,
+        count: this.selectCount,
+        price: this.goodsinfo.sell_price,
+        selected: true
+      }
+
+      //调用store中的加入购物的方法
+      this.$store.commit('addStoreCar', obj)
+
     },
 
     // 小球半场动画的钩子函数
