@@ -25,7 +25,7 @@ module.exports = {
       {test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader']},
       {test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']},
       {test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader'},
-      {test: /\.(jpg|png|gif|jpeg|bmp|svg)$/, use: 'url-loader?limit=7686&name=[hash:8]-[name].[ext]'}
+      {test: /\.(jpg|png|gif|jpeg|bmp|svg)$/, use: 'url-loader?limit=90000&name=[hash:8]-[name].[ext]'}
     ]
   },
   resolve:{

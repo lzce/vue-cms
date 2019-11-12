@@ -1,7 +1,11 @@
 <template>
   <div class="app-container">
     <!-- 顶部header区域 -->
-    <mt-header fixed title="前端vue项目"></mt-header>
+    <mt-header fixed title="前端vue项目">
+      <span class="goback" slot="left" @click="goback" v-show="flag">
+        <mt-button icon="back">返回</mt-button>
+      </span>
+    </mt-header>
 
     <!-- 中间路由部分 -->
     <transition>
@@ -32,30 +36,62 @@
 </template>
 
 <script>
-export default {};
+
+export default {
+
+  data(){
+    return {
+      flag: true
+    }
+  },
+  created(){
+    this.falg = this.$route.path === '/home'? false : true
+  },
+  methods: {
+    goback(){
+      this.$router.go(-1)
+    }
+  },
+  watch: {
+    '$route'(to, from){
+      console.log(to, from)
+      if (to.path === '/home') {
+        this.flag = false
+      } else {
+        this.flag = true
+      }
+    }
+  }
+
+
+};
 </script>
 
 <style lang="scss" scoped>
 .app-container {
   padding-top: 40px;
-	overflow-x: hidden;
+  overflow-x: hidden;
   padding-bottom: 50px;
+
+  .goback {
+    .mint-header .mint-button {
+      height: 30px;
+    }
+  }
 }
 
 .mint-header.is-fixed {
   z-index: 99;
-}  
+}
 
-
-.v-enter
- {
+.v-enter {
   opacity: 0;
   transform: translateX(100%);
 }
 .v-leave-to {
-	opacity: 0;
+  opacity: 0;
   transform: translateX(-100%);
-	position: absolute;
+  position: absolute;
 }
 .v-enter-active,
 .v-leave-active {
@@ -64,30 +100,30 @@ export default {};
 
 // 解决tabbar路由失效的问题
 .mui-bar-tab .mui-tab-item-lzc.mui-active {
-    color: #007aff;
+  color: #007aff;
 }
 .mui-bar-tab .mui-tab-item-lzc {
-    display: table-cell;
-    overflow: hidden;
-    width: 1%;
-    height: 50px;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: #929292;
+  display: table-cell;
+  overflow: hidden;
+  width: 1%;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #929292;
 }
 .mui-bar-tab .mui-tab-item-lzc .mui-icon {
-    top: 3px;
-    width: 24px;
-    height: 24px;
-    padding-top: 0;
-    padding-bottom: 0;
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
-.mui-bar-tab .mui-tab-item-lzc .mui-icon~.mui-tab-label {
-    font-size: 11px;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.mui-bar-tab .mui-tab-item-lzc .mui-icon ~ .mui-tab-label {
+  font-size: 11px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

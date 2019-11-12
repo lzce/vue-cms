@@ -101,6 +101,7 @@ export default {
 
 <style lang="scss" scoped>
 .shopcar-container {
+	overflow: hidden;
 	.mui-card-content-inner {
 		display: flex;
 		align-items: center;
