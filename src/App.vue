@@ -54,7 +54,7 @@ export default {
   },
   watch: {
     '$route'(to, from){
-      console.log(to, from)
+      // console.log(to, from)
       if (to.path === '/home') {
         this.flag = false
       } else {
